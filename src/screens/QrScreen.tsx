@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
-import {
-    View,
-    Image,
-    StyleSheet,
-    TouchableOpacity,
-    Modal,
-    Text,
-} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Video, ResizeMode } from 'expo-av';
+import { ResizeMode, Video } from 'expo-av';
+import React, { useEffect, useState } from 'react';
+import {
+    Image,
+    Modal,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetScan } from '../redux/slices/scanSlice';
+import { RootState } from '../redux/store';
 
 const QrScreen = () => {
     const navigation = useNavigation<any>();
-    const [scanCount, setScanCount] = useState(0);
+    const dispatch = useDispatch();
+    const scanCount = useSelector((state: RootState) => state.scan.count);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const handleSuccessfulScan = () => {
-        const newCount = scanCount + 1;
-        if (newCount === 10) {
+    useEffect(() => {
+        if (scanCount === 10) {
             setModalVisible(true);
-            setScanCount(0);
-        } else {
-            setScanCount(newCount);
+            dispatch(resetScan());
         }
-    };
+    }, [scanCount]);
 
     const renderStamps = () => {
         return Array.from({ length: 9 }).map((_, i) => (
@@ -61,7 +62,7 @@ const QrScreen = () => {
 
             <View style={styles.iconRow}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('QrScannerScreen', { onSuccess: handleSuccessfulScan })}
+                    onPress={() => navigation.navigate('QrScannerScreen')}
                 >
                     <Image source={require('../../assets/icons/qr.png')} style={styles.icon} />
                 </TouchableOpacity>
