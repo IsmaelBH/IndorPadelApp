@@ -127,7 +127,9 @@ eas build --platform android --profile production
 
 ## ✅ Estado del Proyecto
 
-🚧 En ajustes finales de cámara y escaneo QR  
+✅ Escaneo QR funcionando correctamente con detección de códigos válidos  
+✅ Animación con logo agregado en cada escaneo exitoso  
+✅ Modal de cancha gratis al llegar a 10 escaneos  
 📦 Firebase, SQLite, Redux y navegación funcionando  
 📱 Diseño visual terminado
 
@@ -146,3 +148,4 @@ eas build --platform android --profile production
 
 📧 ismaelbarbe@gmail.com  
 🌐 [GitHub - IsmaelBH](https://github.com/IsmaelBH)
+
