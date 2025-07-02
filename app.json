@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "IndorPadel",
+    "slug": "IndorPadelApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "scheme": "indorpadel",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ismael21986.IndorPadel"
+    },
+    "android": {
+      "package": "com.ismael21986.IndorPadel",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-barcode-scanner"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "54d714a6-d3ab-4168-b892-b5daa2096797"
+      }
+    },
+    "owner": "ismael21986"
+  }
+}
