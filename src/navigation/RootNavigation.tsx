@@ -1,10 +1,10 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import AppStackNavigator from './AppStackNavigator';
-import AuthNavigator from './AuthNavigator';
+import React from 'react';
+import { ActivityIndicator, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../redux/store';
-import { ActivityIndicator, View } from 'react-native';
+import AppStackNavigator from './AppStackNavigator';
+import AuthNavigator from './AuthNavigator';
 
 const RootNavigation = () => {
     const user = useSelector((state: RootState) => state.auth);
@@ -30,4 +30,3 @@ const RootNavigation = () => {
 };
 
 export default RootNavigation;
-
